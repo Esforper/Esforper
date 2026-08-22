@@ -9,50 +9,32 @@
 </p>
 
 <p align="center">
-  <a href="#agent-orchestrator"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-orchestrator-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-orchestrator-light.svg"><img alt="orchestrator — who is behind this runtime" src="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-orchestrator-light.svg" width="168"></picture></a>
-  <a href="#agent-researcher"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-researcher-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-researcher-light.svg"><img alt="researcher — retrieval, Turkish NLP, evaluation" src="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-researcher-light.svg" width="168"></picture></a>
-  <a href="#agent-builder"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-builder-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-builder-light.svg"><img alt="builder — the things that actually run" src="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-builder-light.svg" width="168"></picture></a>
-  <a href="#agent-analyst"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-analyst-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-analyst-light.svg"><img alt="analyst — commit workload + language mix" src="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-analyst-light.svg" width="168"></picture></a>
-  <a href="#agent-archivist"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-archivist-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-archivist-light.svg"><img alt="archivist — everything else, collapsed" src="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-archivist-light.svg" width="168"></picture></a>
+  <a href="#agent-orchestrator"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-orchestrator-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-orchestrator-light.svg"><img alt="orchestrator — who is behind this runtime" src="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-orchestrator-light.svg" width="156"></picture></a>
+  <a href="#agent-researcher"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-researcher-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-researcher-light.svg"><img alt="researcher — the layer underneath the agents" src="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-researcher-light.svg" width="156"></picture></a>
+  <a href="#agent-builder"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-builder-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-builder-light.svg"><img alt="builder — the things that actually run" src="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-builder-light.svg" width="156"></picture></a>
+  <a href="#agent-analyst"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-analyst-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-analyst-light.svg"><img alt="analyst — commit workload and stack" src="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-analyst-light.svg" width="156"></picture></a>
+  <a href="#agent-archivist"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-archivist-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-archivist-light.svg"><img alt="archivist — everything else" src="https://raw.githubusercontent.com/Esforper/Esforper/runtime/agent-archivist-light.svg" width="156"></picture></a>
 </p>
+
+<p align="center"><em>I build the coordination layer — the part that decides which agent speaks next, and why.</em></p>
 
 ---
 
 ## agent orchestrator
 
-> who is behind this runtime
+I build **multi-agent systems** — specifically the coordination layer: routing, handoff, and the rules that decide which agent runs next and when the whole thing should stop.
 
-<details>
-<summary><code>▸ expand</code></summary>
+The interesting failures are almost never in the model. They are in the seams. An agent answers confidently from context it should have rejected. A planner hands off work it already finished. A loop runs because nobody defined a termination condition. Swapping in a stronger model hides those for a while; it does not fix any of them.
 
-<br>
-
-I work on **multi-agent systems**: the plumbing that lets a planner, a retriever, a coder and a critic pass work between each other without turning into an expensive game of telephone.
-
-Most of what I build runs **locally**. Small language models on a laptop, no API key, no data leaving the machine. That constraint is the interesting part -- it forces the orchestration to be good, because the individual model can't bail you out.
-
-Recently that has meant Turkish-language agentic RAG on Microsoft Foundry Local, and a decision-support system where the agents handle university administrative workflows end to end.
-
-</details>
+So most of what I build runs on **small models, locally** — Foundry Local, no API key, nothing leaving the machine. The constraint is deliberate. When you cannot escalate your way out of a bad handoff, the orchestration has to actually be correct.
 
 ## agent researcher
 
-> retrieval, Turkish NLP, evaluation
+A confident agent on top of bad context is worse than no agent — it produces a wrong answer with a reasoning trace attached. So a large share of my work sits *below* the agent layer, where the context is decided.
 
-<details>
-<summary><code>▸ expand</code></summary>
-
-<br>
-
-The retrieval half of agentic systems is where most of the failures actually live. A confident agent on top of bad context is worse than no agent.
-
-So a lot of my work sits below the agent layer: chunking strategies that survive Turkish morphology, NER-based anonymisation before anything reaches a model, and evaluation harnesses that tell me whether a change helped or just moved the error around.
-
-</details>
+Chunking that survives Turkish morphology. NER-based anonymisation, so personal data is removed before a model ever sees it. And evaluation harnesses, because without one you cannot tell whether a change helped or simply relocated the error.
 
 ## agent builder
-
-> the things that actually run
 
 <table>
 <tr>
@@ -60,7 +42,7 @@ So a lot of my work sits below the agent layer: chunking strategies that survive
 
 #### [Foundry Local Agentic RAG](https://github.com/Esforper/foundry-local-agentic-rag)
 
-Fully offline Turkish assistant that escalates: plain RAG → agentic RAG → multi-agent. Runs on small language models via Microsoft Foundry Local, so nothing leaves the machine.
+A Turkish assistant that escalates through three coordination strategies — plain RAG, then agentic RAG, then multi-agent — so the cost of coordination is only paid when the question needs it. Runs entirely offline on small models via Microsoft Foundry Local.
 
 `multi-agent` `RAG` `SLM` `offline` `Turkish` · <sub>Python</sub>
 
@@ -69,7 +51,7 @@ Fully offline Turkish assistant that escalates: plain RAG → agentic RAG → mu
 
 #### [Multi-Agent Decision Support System](https://github.com/Esforper/multi-agent-llm-based-intelligent-decision-support-system-for-university-administrative-processes)
 
-LLM agents that handle university administrative processes as a pipeline -- intake, routing, drafting, review -- instead of a single prompt trying to do all four badly.
+University administrative processes handled as an agent pipeline — intake, routing, drafting, review — rather than one prompt attempting all four and doing none of them well.
 
 `multi-agent` `LLM` `decision support` · <sub>Python</sub>
 
@@ -80,7 +62,7 @@ LLM agents that handle university administrative processes as a pipeline -- inta
 
 #### [Claude Usage Bar](https://github.com/Esforper/claude-usage-bar)
 
-Live Claude usage quota pinned to the Windows 11 taskbar. Small, but I look at it more than anything else I have written.
+Live Claude usage quota pinned to the Windows 11 taskbar. Small, but I look at it more often than anything else I have written.
 
 `Windows` `tooling` `desktop` · <sub>Python</sub>
 
@@ -89,7 +71,7 @@ Live Claude usage quota pinned to the Windows 11 taskbar. Small, but I look at i
 
 #### [Turkish NER Text Anonymizer](https://github.com/Esforper/Turkish-NER-Text-Anonymizer)
 
-Named-entity recognition tuned for Turkish, used as a scrubbing stage so personal data never reaches a model in the first place.
+Named-entity recognition tuned for Turkish, used as a scrubbing stage so personal data is stripped before it reaches a model at all.
 
 `NLP` `NER` `privacy` `Turkish` · <sub>Jupyter Notebook</sub>
 
@@ -100,7 +82,7 @@ Named-entity recognition tuned for Turkish, used as a scrubbing stage so persona
 
 #### [Rating-Based DAG System](https://github.com/Esforper/Rating-Based-DAG-System-Airflow-PostgreSQL-)
 
-Airflow DAGs over PostgreSQL where scheduling priority follows a rating signal rather than a fixed cron.
+Airflow DAGs over PostgreSQL where scheduling priority follows a rating signal instead of a fixed cron — the scheduler decides what matters next.
 
 `Airflow` `PostgreSQL` `data` · <sub>Python</sub>
 
@@ -109,7 +91,7 @@ Airflow DAGs over PostgreSQL where scheduling priority follows a rating signal r
 
 #### [AA-Next](https://github.com/Esforper/AA-Next)
 
-Flutter client. TODO: one sentence on what this is -- it is the only featured repo with no description on GitHub.
+Flutter client. TODO: one sentence on what this is — it is the only featured repo with no description on GitHub.
 
 `Flutter` `mobile` · <sub>Dart</sub>
 
@@ -118,8 +100,6 @@ Flutter client. TODO: one sentence on what this is -- it is the only featured re
 </table>
 
 ## agent analyst
-
-> commit workload + language mix
 
 <p align="center">
   <picture>
@@ -137,15 +117,13 @@ Flutter client. TODO: one sentence on what this is -- it is the only featured re
   </picture>
 </p>
 
-**agents & LLM** &nbsp; `Python` `LangGraph-style orchestration` `Foundry Local` `Ollama` `OpenAI / Anthropic APIs`  
-**data** &nbsp; `PostgreSQL` `Airflow` `vector stores` `pandas`  
+**orchestration** &nbsp; `Python` `multi-agent pipelines` `Foundry Local` `Ollama` `OpenAI / Anthropic APIs`  
+**retrieval** &nbsp; `vector stores` `NER preprocessing` `chunking strategies` `eval harnesses`  
+**data** &nbsp; `PostgreSQL` `Airflow` `pandas`  
 **platform** &nbsp; `C# / .NET` `Java` `FastAPI` `Docker`  
-**client** &nbsp; `Flutter / Dart` `JavaScript` `HTML/CSS`  
-**other** &nbsp; `Verilog` `Selenium`
+**client** &nbsp; `Flutter / Dart` `JavaScript`
 
 ## agent archivist
-
-> everything else, collapsed
 
 <details>
 <summary><code>▸ 21 more repositories</code></summary>

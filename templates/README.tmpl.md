@@ -14,6 +14,7 @@
     {{WORKLOAD}}      contribution monitor
     {{SNAKE}}         contribution snake
     {{STACK}}         stack list
+    {{TAGLINE}}       the one-line positioning statement
     {{ARCHIVE}}       full repository index, from data/repos.json
     {{LINKS}}         footer links
     {{UPDATED}}       build timestamp
@@ -24,6 +25,8 @@
 {{HEADER}}
 
 {{NAV}}
+
+{{TAGLINE}}
 
 ---
 

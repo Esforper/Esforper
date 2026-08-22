@@ -14,7 +14,10 @@
 import { MONO } from './theme.mjs';
 import { svgDoc, rect, circle, line, text, motion, round } from './lib/svg.mjs';
 
-const W = 168;
+// Five cards plus inter-element spacing have to clear GitHub's ~980px content
+// width on a single row; wrapping strands the fifth card alone and centred.
+export const CARD_WIDTH = 156;
+const W = CARD_WIDTH;
 const H = 96;
 
 // Per-card offsets, so the blink rates never line up.

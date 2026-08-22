@@ -1,36 +1,38 @@
 {
   "_editing": "This file is the content source for the whole profile. Edit it, run `npm run build`, and every SVG + README section updates. Fields marked TODO are the only ones I could not derive from your public repos -- fill them in.",
+
   "runtime": {
     "_note": "Where generated SVGs are published. Assets live on assetBranch so main never takes a bot commit.",
     "owner": "Esforper",
     "repo": "Esforper",
     "assetBranch": "runtime"
   },
+
   "identity": {
     "handle": "Esforper",
     "name": "Ömer Faruk Dolanbay",
-    "tagline": "I build systems where several models argue until one of them is right.",
+    "tagline": "I build the coordination layer — the part that decides which agent speaks next, and why.",
     "location": "TODO: city, country",
-    "focus": "Multi-agent orchestration · agentic RAG · running it all locally",
     "rotatingRoles": [
-      "multi-agent systems",
-      "agentic RAG pipelines",
-      "local-first LLM runtimes",
-      "Turkish NLP"
+      "agent orchestration",
+      "routing & handoff design",
+      "retrieval agents can trust",
+      "evaluation harnesses"
     ]
   },
+
   "agents": [
     {
       "id": "orchestrator",
       "label": "orchestrator",
       "role": "identity · routing",
       "accent": "cyan",
-      "metric": "5 agents online",
+      "metric": "start here",
       "summary": "who is behind this runtime",
       "body": [
-        "I work on **multi-agent systems**: the plumbing that lets a planner, a retriever, a coder and a critic pass work between each other without turning into an expensive game of telephone.",
-        "Most of what I build runs **locally**. Small language models on a laptop, no API key, no data leaving the machine. That constraint is the interesting part -- it forces the orchestration to be good, because the individual model can't bail you out.",
-        "Recently that has meant Turkish-language agentic RAG on Microsoft Foundry Local, and a decision-support system where the agents handle university administrative workflows end to end."
+        "I build **multi-agent systems** — specifically the coordination layer: routing, handoff, and the rules that decide which agent runs next and when the whole thing should stop.",
+        "The interesting failures are almost never in the model. They are in the seams. An agent answers confidently from context it should have rejected. A planner hands off work it already finished. A loop runs because nobody defined a termination condition. Swapping in a stronger model hides those for a while; it does not fix any of them.",
+        "So most of what I build runs on **small models, locally** — Foundry Local, no API key, nothing leaving the machine. The constraint is deliberate. When you cannot escalate your way out of a bad handoff, the orchestration has to actually be correct."
       ]
     },
     {
@@ -39,10 +41,10 @@
       "role": "retrieval · NLP",
       "accent": "magenta",
       "metric": "3 pipelines",
-      "summary": "retrieval, Turkish NLP, evaluation",
+      "summary": "the layer underneath the agents",
       "body": [
-        "The retrieval half of agentic systems is where most of the failures actually live. A confident agent on top of bad context is worse than no agent.",
-        "So a lot of my work sits below the agent layer: chunking strategies that survive Turkish morphology, NER-based anonymisation before anything reaches a model, and evaluation harnesses that tell me whether a change helped or just moved the error around."
+        "A confident agent on top of bad context is worse than no agent — it produces a wrong answer with a reasoning trace attached. So a large share of my work sits *below* the agent layer, where the context is decided.",
+        "Chunking that survives Turkish morphology. NER-based anonymisation, so personal data is removed before a model ever sees it. And evaluation harnesses, because without one you cannot tell whether a change helped or simply relocated the error."
       ]
     },
     {
@@ -50,11 +52,10 @@
       "label": "builder",
       "role": "shipping",
       "accent": "green",
-      "metric": "27 repos",
+      "metric": "6 projects",
       "summary": "the things that actually run",
       "body": [
-        "Python for the agent work, C# and Java for the platform work, Dart when it needs to be on a phone, and once -- memorably -- Verilog.",
-        "The projects below are the ones I would actually point someone at."
+        "Python for the agent work, C# and Java for platform work, Dart when it has to be on a phone, and once — memorably — Verilog."
       ]
     },
     {
@@ -63,9 +64,9 @@
       "role": "telemetry",
       "accent": "amber",
       "metric": "live",
-      "summary": "commit workload + language mix",
+      "summary": "commit workload and stack",
       "body": [
-        "The workload monitor above is generated daily from the GitHub contributions API by a workflow in this repo. It is not a widget from someone else's server -- the SVG is built here, from my own data."
+        "The monitor below is generated daily from the GitHub contributions API by a workflow in this repository. It is not a widget served from someone else's host — the SVG is built here, from my own data, and published to a branch that never touches this one."
       ]
     },
     {
@@ -73,146 +74,76 @@
       "label": "archivist",
       "role": "index",
       "accent": "dim",
-      "metric": "full index",
-      "summary": "everything else, collapsed",
+      "metric": "21 repos",
+      "summary": "everything else",
       "body": [
         "The long tail: coursework, experiments, and things that were load-bearing for exactly one week."
       ]
     }
   ],
+
   "projects": [
     {
       "repo": "foundry-local-agentic-rag",
       "title": "Foundry Local Agentic RAG",
       "lang": "Python",
       "featured": true,
-      "blurb": "Fully offline Turkish assistant that escalates: plain RAG → agentic RAG → multi-agent. Runs on small language models via Microsoft Foundry Local, so nothing leaves the machine.",
-      "tags": [
-        "multi-agent",
-        "RAG",
-        "SLM",
-        "offline",
-        "Turkish"
-      ]
+      "blurb": "A Turkish assistant that escalates through three coordination strategies — plain RAG, then agentic RAG, then multi-agent — so the cost of coordination is only paid when the question needs it. Runs entirely offline on small models via Microsoft Foundry Local.",
+      "tags": ["multi-agent", "RAG", "SLM", "offline", "Turkish"]
     },
     {
       "repo": "multi-agent-llm-based-intelligent-decision-support-system-for-university-administrative-processes",
       "title": "Multi-Agent Decision Support System",
       "lang": "Python",
       "featured": true,
-      "blurb": "LLM agents that handle university administrative processes as a pipeline -- intake, routing, drafting, review -- instead of a single prompt trying to do all four badly.",
-      "tags": [
-        "multi-agent",
-        "LLM",
-        "decision support"
-      ]
+      "blurb": "University administrative processes handled as an agent pipeline — intake, routing, drafting, review — rather than one prompt attempting all four and doing none of them well.",
+      "tags": ["multi-agent", "LLM", "decision support"]
     },
     {
       "repo": "claude-usage-bar",
       "title": "Claude Usage Bar",
       "lang": "Python",
       "featured": true,
-      "blurb": "Live Claude usage quota pinned to the Windows 11 taskbar. Small, but I look at it more than anything else I have written.",
-      "tags": [
-        "Windows",
-        "tooling",
-        "desktop"
-      ]
+      "blurb": "Live Claude usage quota pinned to the Windows 11 taskbar. Small, but I look at it more often than anything else I have written.",
+      "tags": ["Windows", "tooling", "desktop"]
     },
     {
       "repo": "Turkish-NER-Text-Anonymizer",
       "title": "Turkish NER Text Anonymizer",
       "lang": "Jupyter Notebook",
       "featured": true,
-      "blurb": "Named-entity recognition tuned for Turkish, used as a scrubbing stage so personal data never reaches a model in the first place.",
-      "tags": [
-        "NLP",
-        "NER",
-        "privacy",
-        "Turkish"
-      ]
+      "blurb": "Named-entity recognition tuned for Turkish, used as a scrubbing stage so personal data is stripped before it reaches a model at all.",
+      "tags": ["NLP", "NER", "privacy", "Turkish"]
     },
     {
       "repo": "Rating-Based-DAG-System-Airflow-PostgreSQL-",
       "title": "Rating-Based DAG System",
       "lang": "Python",
       "featured": true,
-      "blurb": "Airflow DAGs over PostgreSQL where scheduling priority follows a rating signal rather than a fixed cron.",
-      "tags": [
-        "Airflow",
-        "PostgreSQL",
-        "data"
-      ]
+      "blurb": "Airflow DAGs over PostgreSQL where scheduling priority follows a rating signal instead of a fixed cron — the scheduler decides what matters next.",
+      "tags": ["Airflow", "PostgreSQL", "data"]
     },
     {
       "repo": "AA-Next",
       "title": "AA-Next",
       "lang": "Dart",
       "featured": true,
-      "blurb": "Flutter client. TODO: one sentence on what this is -- it is the only featured repo with no description on GitHub.",
-      "tags": [
-        "Flutter",
-        "mobile"
-      ]
+      "blurb": "Flutter client. TODO: one sentence on what this is — it is the only featured repo with no description on GitHub.",
+      "tags": ["Flutter", "mobile"]
     }
   ],
+
   "stack": [
-    {
-      "group": "agents & LLM",
-      "items": [
-        "Python",
-        "LangGraph-style orchestration",
-        "Foundry Local",
-        "Ollama",
-        "OpenAI / Anthropic APIs"
-      ]
-    },
-    {
-      "group": "data",
-      "items": [
-        "PostgreSQL",
-        "Airflow",
-        "vector stores",
-        "pandas"
-      ]
-    },
-    {
-      "group": "platform",
-      "items": [
-        "C# / .NET",
-        "Java",
-        "FastAPI",
-        "Docker"
-      ]
-    },
-    {
-      "group": "client",
-      "items": [
-        "Flutter / Dart",
-        "JavaScript",
-        "HTML/CSS"
-      ]
-    },
-    {
-      "group": "other",
-      "items": [
-        "Verilog",
-        "Selenium"
-      ]
-    }
+    { "group": "orchestration", "items": ["Python", "multi-agent pipelines", "Foundry Local", "Ollama", "OpenAI / Anthropic APIs"] },
+    { "group": "retrieval", "items": ["vector stores", "NER preprocessing", "chunking strategies", "eval harnesses"] },
+    { "group": "data", "items": ["PostgreSQL", "Airflow", "pandas"] },
+    { "group": "platform", "items": ["C# / .NET", "Java", "FastAPI", "Docker"] },
+    { "group": "client", "items": ["Flutter / Dart", "JavaScript"] }
   ],
+
   "links": [
-    {
-      "label": "GitHub",
-      "url": "https://github.com/Esforper"
-    },
-    {
-      "label": "LinkedIn",
-      "url": "TODO: https://linkedin.com/in/..."
-    },
-    {
-      "label": "Email",
-      "url": "mailto:dolanbayomerfaruk@gmail.com"
-    }
+    { "label": "GitHub", "url": "https://github.com/Esforper" },
+    { "label": "LinkedIn", "url": "TODO: https://linkedin.com/in/..." },
+    { "label": "Email", "url": "mailto:dolanbayomerfaruk@gmail.com" }
   ]
 }

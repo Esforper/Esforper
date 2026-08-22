@@ -198,10 +198,30 @@ export function bootSvg(theme, profile) {
   });
 
   body.push(rect({ x: RX, y: RY - 12, width: 8, height: 15, fill: theme.green, class: 'caret' }));
+  // Static frame: parked after the first role, the only one drawn without motion.
   css.push(`.caret{transform:translateX(${round(width(roles[0], 14) - 3)}px)}`);
-  anim.push(`.caret{animation:caret-blink 1.06s steps(1) infinite,caret-track ${CYCLE}s steps(1) 3.6s infinite}
+
+  // The caret advances *with* the typing. Stepping straight to the finished
+  // width leaves it hovering past the text while characters appear behind it.
+  // Per-keyframe animation-timing-function lets one animation step forward
+  // during the type, hold while the text sits, then step back on the delete --
+  // on exactly the same beats as the role clip above.
+  const pct = (seconds) => round((seconds / CYCLE) * 100, 3);
+  const track = roles
+    .map((r, i) => {
+      const start = i * SLOT;
+      const end = round(width(r, 14) - 3);
+      return (
+        `${pct(start)}%{transform:translateX(0);animation-timing-function:steps(${r.length})}` +
+        `${pct(start + 0.9)}%{transform:translateX(${end}px);animation-timing-function:steps(1)}` +
+        `${pct(start + 2.7)}%{transform:translateX(${end}px);animation-timing-function:steps(${r.length})}`
+      );
+    })
+    .join('');
+
+  anim.push(`.caret{animation:caret-blink 1.06s steps(1) infinite,caret-track ${CYCLE}s linear 3.6s infinite}
 @keyframes caret-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
-@keyframes caret-track{${roles.map((r, i) => `${round(((i * SLOT) / CYCLE) * 100, 3)}%{transform:translateX(${round(width(r, 14) - 3)}px)}`).join('')}}`);
+@keyframes caret-track{${track}100%{transform:translateX(0)}}`);
 
   if (theme.glow) css.push('.live,.flow{filter:drop-shadow(0 0 3px currentColor)}');
 
