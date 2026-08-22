@@ -1,0 +1,2 @@
+assets/snake-dark.svg?color_snake=%232dd4bf&color_dots=%23161b22%2C%230e4429%2C%23006d32%2C%2326a641%2C%2339d353
+assets/snake-light.svg?color_snake=%230969da&color_dots=%23ebedf0%2C%239be9a8%2C%2340c463%2C%2330a14e%2C%23216e39

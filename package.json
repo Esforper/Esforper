@@ -1,0 +1,13 @@
+{
+  "name": "esforper-profile",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Generator for the Esforper GitHub profile README. Zero dependencies, Node 20+.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs",
+    "dev": "node scripts/preview.mjs --rebuild"
+  }
+}

@@ -1,0 +1,245 @@
+[
+ {
+  "name": "claude-usage-bar",
+  "description": " Live Claude usage quota in the Windows 11 taskbar",
+  "language": "Python",
+  "stars": 1,
+  "fork": false,
+  "pushedAt": "2026-08-22T03:26:01Z",
+  "url": "https://github.com/Esforper/claude-usage-bar"
+ },
+ {
+  "name": "foundry-local-agentic-rag",
+  "description": "Fully offline, Turkish RAG -> agentic -> multi-agent assistant built on Microsoft Foundry Local (SLM).",
+  "language": "Python",
+  "stars": 1,
+  "fork": false,
+  "pushedAt": "2026-07-22T12:31:55Z",
+  "url": "https://github.com/Esforper/foundry-local-agentic-rag"
+ },
+ {
+  "name": "multi-agent-llm-based-intelligent-decision-support-system-for-university-administrative-processes",
+  "description": null,
+  "language": "Python",
+  "stars": 1,
+  "fork": false,
+  "pushedAt": "2026-06-08T17:40:48Z",
+  "url": "https://github.com/Esforper/multi-agent-llm-based-intelligent-decision-support-system-for-university-administrative-processes"
+ },
+ {
+  "name": "Turkish-NER-Text-Anonymizer",
+  "description": null,
+  "language": "Jupyter Notebook",
+  "stars": 2,
+  "fork": false,
+  "pushedAt": "2026-01-14T19:13:20Z",
+  "url": "https://github.com/Esforper/Turkish-NER-Text-Anonymizer"
+ },
+ {
+  "name": "AA-Next",
+  "description": null,
+  "language": "Dart",
+  "stars": 1,
+  "fork": false,
+  "pushedAt": "2025-10-12T04:09:30Z",
+  "url": "https://github.com/Esforper/AA-Next"
+ },
+ {
+  "name": "ScheduleProject_Python",
+  "description": null,
+  "language": null,
+  "stars": 0,
+  "fork": true,
+  "pushedAt": "2025-09-10T11:30:24Z",
+  "url": "https://github.com/Esforper/ScheduleProject_Python"
+ },
+ {
+  "name": "ScheduleProjectAlgorithmTest-Python-",
+  "description": "Pythonda, uygulamada kullanılacak algoritmalar ve yapılar için temel bir yapı oluşturulması ve test ortamı olması amaçlanmıştır.",
+  "language": "HTML",
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2025-09-01T16:04:07Z",
+  "url": "https://github.com/Esforper/ScheduleProjectAlgorithmTest-Python-"
+ },
+ {
+  "name": "Rating-Based-DAG-System-Airflow-PostgreSQL-",
+  "description": null,
+  "language": "Python",
+  "stars": 1,
+  "fork": false,
+  "pushedAt": "2025-07-28T13:03:19Z",
+  "url": "https://github.com/Esforper/Rating-Based-DAG-System-Airflow-PostgreSQL-"
+ },
+ {
+  "name": "Yetenek-Pusulas-Platform",
+  "description": null,
+  "language": "C#",
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2025-06-11T18:21:40Z",
+  "url": "https://github.com/Esforper/Yetenek-Pusulas-Platform"
+ },
+ {
+  "name": "Yetenek_Pusulasi_Web_Platform",
+  "description": null,
+  "language": "C#",
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2025-06-03T17:43:17Z",
+  "url": "https://github.com/Esforper/Yetenek_Pusulasi_Web_Platform"
+ },
+ {
+  "name": "GOODFLUENCE-",
+  "description": null,
+  "language": "HTML",
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2025-05-29T10:07:40Z",
+  "url": "https://github.com/Esforper/GOODFLUENCE-"
+ },
+ {
+  "name": "Verilog-IAS-Architecture",
+  "description": null,
+  "language": "Verilog",
+  "stars": 1,
+  "fork": false,
+  "pushedAt": "2025-01-13T08:02:48Z",
+  "url": "https://github.com/Esforper/Verilog-IAS-Architecture"
+ },
+ {
+  "name": "Spotify-DB-project",
+  "description": null,
+  "language": "HTML",
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2025-01-11T19:03:23Z",
+  "url": "https://github.com/Esforper/Spotify-DB-project"
+ },
+ {
+  "name": "TestRepo",
+  "description": null,
+  "language": null,
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2024-12-10T16:49:48Z",
+  "url": "https://github.com/Esforper/TestRepo"
+ },
+ {
+  "name": "Auto-Article-Summarizer",
+  "description": null,
+  "language": "Python",
+  "stars": 1,
+  "fork": false,
+  "pushedAt": "2024-09-09T07:16:45Z",
+  "url": "https://github.com/Esforper/Auto-Article-Summarizer"
+ },
+ {
+  "name": "WordGuessingGame",
+  "description": null,
+  "language": "Python",
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2024-09-08T12:05:22Z",
+  "url": "https://github.com/Esforper/WordGuessingGame"
+ },
+ {
+  "name": "AcademicianPlatform",
+  "description": "A web platform that connects academicians with each other.",
+  "language": "C#",
+  "stars": 1,
+  "fork": true,
+  "pushedAt": "2024-09-08T11:58:36Z",
+  "url": "https://github.com/Esforper/AcademicianPlatform"
+ },
+ {
+  "name": "WordPredictorChat",
+  "description": null,
+  "language": "Python",
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2024-09-08T11:49:18Z",
+  "url": "https://github.com/Esforper/WordPredictorChat"
+ },
+ {
+  "name": "SchedularApp",
+  "description": null,
+  "language": "C#",
+  "stars": 4,
+  "fork": false,
+  "pushedAt": "2024-05-13T21:18:02Z",
+  "url": "https://github.com/Esforper/SchedularApp"
+ },
+ {
+  "name": "MyHealthAssistantProject",
+  "description": "Bu proje, yapay zeka entegrasyonu ve proje mentörlüğümle geliştirilmiş bir sağlıkla ilgili mobil uygulamadır. Sağlık sorularınıza yanıt bulabileceğiniz, spor takibi yapabileceğiniz ve beslenmeyle ilgili öneriler alabileceğiniz bir platform sunar.",
+  "language": null,
+  "stars": 0,
+  "fork": true,
+  "pushedAt": "2024-05-13T16:16:31Z",
+  "url": "https://github.com/Esforper/MyHealthAssistantProject"
+ },
+ {
+  "name": "long-way-for-hello-world",
+  "description": null,
+  "language": "C",
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2024-02-15T20:43:27Z",
+  "url": "https://github.com/Esforper/long-way-for-hello-world"
+ },
+ {
+  "name": "AcademicStaff-information-web-scraping-selenium",
+  "description": null,
+  "language": "Python",
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2024-02-15T20:40:13Z",
+  "url": "https://github.com/Esforper/AcademicStaff-information-web-scraping-selenium"
+ },
+ {
+  "name": "AdamAsmaca",
+  "description": null,
+  "language": "Java",
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2024-02-15T20:39:38Z",
+  "url": "https://github.com/Esforper/AdamAsmaca"
+ },
+ {
+  "name": "OpenAI-API-Example",
+  "description": null,
+  "language": "Jupyter Notebook",
+  "stars": 0,
+  "fork": false,
+  "pushedAt": "2024-02-15T20:35:54Z",
+  "url": "https://github.com/Esforper/OpenAI-API-Example"
+ },
+ {
+  "name": "LibraryManagmentSystem",
+  "description": null,
+  "language": null,
+  "stars": 0,
+  "fork": true,
+  "pushedAt": "2023-12-25T21:51:40Z",
+  "url": "https://github.com/Esforper/LibraryManagmentSystem"
+ },
+ {
+  "name": "Project-TaskPulse",
+  "description": null,
+  "language": "C#",
+  "stars": 1,
+  "fork": false,
+  "pushedAt": "2023-12-24T08:12:28Z",
+  "url": "https://github.com/Esforper/Project-TaskPulse"
+ },
+ {
+  "name": "SosyalGelisimKulubu-web-design",
+  "description": null,
+  "language": "HTML",
+  "stars": 1,
+  "fork": false,
+  "pushedAt": "2023-06-13T15:39:16Z",
+  "url": "https://github.com/Esforper/SosyalGelisimKulubu-web-design"
+ }
+]

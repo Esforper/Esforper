@@ -1,0 +1,6 @@
+node_modules/
+.cache/
+
+# Fetched at build time. The committed sample is the fallback, and a stale
+# snapshot in git would be worse than none.
+data/contributions.json
